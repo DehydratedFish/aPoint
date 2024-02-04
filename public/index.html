@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>aPoint</title>
+
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="calendar">
+            <div id="calendar_header">
+                <span id="previous_month" class="month_change"><</span>
+                <h1 id="month"></h1>
+                <span id="next_month" class="month_change">></span>
+            </div>
+
+            <div id="calendar_weekdays">
+                <div>Mo</div>
+                <div>Di</div>
+                <div>Mi</div>
+                <div>Do</div>
+                <div>Fr</div>
+                <div>Sa</div>
+                <div>So</div>
+            </div>
+
+            <div id="calendar_body"></div>
+            <div id="day_events" class="day_events">
+            </div>
+        </div>
+
+        <div id="event_popup">
+            <div id="event_header">
+                <h1>Termin</h1>
+                <button onClick="close_event_popup()">X</button>
+            </div>
+
+            <form class="event_form" name="event_form" onSubmit="save_event(event)">
+                <input name="name" placeholder="Name" required>
+                <input name="phone" placeholder="Telefon" type="tel">
+                <input name="email" placeholder="E-Mail" type="email">
+                <input name="title" placeholder="Anrede">
+                <textarea name="notes" placeholder="Bemerkung" rows="3"></textarea>
+
+                <label for="begin">von</label>
+                <input id="begin" name="begin" type="time" required>
+
+                <label for="end">bis</label>
+                <input id="end" name="end" type="time" required>
+
+                <label for="notify">Erinnerung senden</label>
+                <input id="notify" name="notify" type="checkbox">
+
+                <div id="notification_status"></div>
+
+                <button>speichern</button>
+            </form>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
+
